@@ -1,13 +1,19 @@
--- 顶部问号符号没配置 配置不完全    
 return{
-    {
+   {
     "akinsho/bufferline.nvim",
     config = function()
         require("bufferline").setup({
             options = {
               mode = 'buffers',
+            
+                    --myconfig
+              numbers="ordinal",
+              themable=true,
+
+
+
               offsets = {
-                {filetype = 'NvimTree'}
+              {filetype = 'NvimTree'}
               },
             },
             highlights = {
