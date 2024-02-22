@@ -1,3 +1,5 @@
+--https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20 
+--creat ljx-nvim
 return{
     {
   "nvimdev/dashboard-nvim",
