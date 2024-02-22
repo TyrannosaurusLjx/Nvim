@@ -2,75 +2,87 @@
 return {  
   {  
     "hrsh7th/nvim-cmp",  
-    version = true, -- 最新版本太旧  
     event = "InsertEnter",  
     dependencies = {  
       "hrsh7th/cmp-nvim-lsp",  
       "hrsh7th/cmp-buffer",  
       "hrsh7th/cmp-path",  
-      "onsails/lspkind-nvim", --美化自动完成提示信息  
-      "hrsh7th/cmp-nvim-lua", --nvim-cmp source for neovim Lua API.  
-      "octaltree/cmp-look", --用于完成英语单词  
-      "hrsh7th/cmp-calc", --输入数学算式（如1+1=）自动计算  
-      "f3fora/cmp-spell", --nvim-cmp 的拼写源基于 vim 的拼写建议  
-      "hrsh7th/cmp-emoji", --输入: 可以显示表情  
+      "onsails/lspkind-nvim",  
+      "hrsh7th/cmp-nvim-lua",  
+      "octaltree/cmp-look",  
+      "hrsh7th/cmp-calc",  
+      "f3fora/cmp-spell",  
+      "hrsh7th/cmp-emoji",  
     },  
-    opts = function()  
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })  
+    config = function()  
+      local lspkind = require('lspkind')  
       local cmp = require("cmp")  
+      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })  
       local defaults = require("cmp.config.default")()  
-      return {  
+      cmp.setup({  
         completion = {  
           completeopt = "menu,menuone,noinsert",  
         },  
         mapping = cmp.mapping.preset.insert({  
           ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),  
-          ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),  
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),  
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),  
-          ["<C-Space>"] = cmp.mapping.complete(),  
-          ["<C-e>"] = cmp.mapping.abort(),  
-          ["<tab>"] = cmp.mapping.confirm({ select = true }), -- 按tab确认 Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.  
-          ["<S-CR>"] = cmp.mapping.confirm({  
-            behavior = cmp.ConfirmBehavior.Replace,  
-            select = true,  
-          }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.  
-          ["<C-CR>"] = function(fallback)  
-            cmp.abort()  
-            fallback()  
-          end,  
+          -- other mappings...  
         }),  
         sources = {  
           { name = "nvim_lsp" },  
           { name = "path" },  
           { name = "buffer" },  
-          { name = "emoji" }, -- 实际存在的源  
+          { name = "emoji" },  
           { name = "nvim_lua" },  
-          -- { name = "treesitter" }, -- 实际存在的源  
         },  
-        -- formatting = {  
-        --   format = function(_, item)  
-        --     local icons = require("lazyvim.config").icons.kinds  
-        --     if icons[item.kind] then  
-        --       item.kind = icons[item.kind] .. item.kind  
-        --     end  
-        --     return item  
-        --   end,  
-        -- },  
+        snippet = {  
+          expand = function(args)  
+            require('luasnip').lsp_expand(args.body)  
+          end,  
+        },  
+        -- 快捷键绑定
+  mapping = {
+    -- 上一个
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
+    -- 下一个
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    -- 出现补全
+    ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    -- 取消
+    ['<A-,>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
+    -- 确认
+    -- Accept currently selected item. If none selected, `select` first item.
+    -- Set `select` to `false` to only confirm explicitly selected items.
+    ['<tab>'] = cmp.mapping.confirm({
+      select = true,
+      behavior = cmp.ConfirmBehavior.Replace
+    }),
+    -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+  },
+
+        formatting = {  
+          format = lspkind.cmp_format({  
+            with_text = true, --显示 function 等字样  
+            maxwidth = 50,  
+            before = function(entry, vim_item)  
+              vim_item.menu =  ""  -- 不显示来源 -- "[" .. string.upper(entry.source.name) .. "]"  
+              return vim_item  
+            end  
+          })  
+        },  
         experimental = {  
           ghost_text = {  
             hl_group = "CmpGhostText",  
           },  
         },  
         sorting = defaults.sorting,  
-      }  
+      })  
     end,  
-    ---@param opts cmp.ConfigSchema  
-    config = function(_, opts)  
-      for _, source in ipairs(opts.sources) do  
-        source.group_index = source.group_index or 1  
-      end  
-      require("cmp").setup(opts)  
-    end,  
-  }  
+  },
+  -- load vscode snippet (friendly-snippet)
+require("luasnip.loaders.from_vscode").lazy_load()
 }  

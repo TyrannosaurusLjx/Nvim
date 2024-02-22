@@ -20,3 +20,13 @@ keymap.set("n","99","<ESC>:BufferLineCycleNext<CR>")
 -- tree映射
 keymap.set("n","open","<ESC>:Ntree<CR>")
 keymap.set("n","tree","<ESC>:Neotree<CR>")
+
+
+--telescope 映射
+--local builtin = require('telescope.builtin')
+keymap.set("n", "ff", "<ESC>:Telescope find_files<CR> ")
+keymap.set('n', 'fw', "<ESC>:Telescope live_grep <CR> ")
+keymap.set('n', 'fb', "<ESC>:Telescope buffers<CR> ")
+keymap.set('n', 'fh', "<ESC>:Telescope help_tags<CR> ")
+
+ 
