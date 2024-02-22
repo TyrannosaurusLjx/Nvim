@@ -30,8 +30,7 @@ opt.smartcase = true
 
 
 
-
-
+vim.api.nvim_set_option("undofile",true)
 
 
 
