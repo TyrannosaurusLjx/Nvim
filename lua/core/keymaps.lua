@@ -30,5 +30,10 @@ keymap.set('n', 'fb', "<ESC>:Telescope buffers<CR> ")
 keymap.set('n', 'fh', "<ESC>:Telescope help_tags<CR> ")
 
 --运行终端命令快捷键
-keymap.set("i", "gt", "<ESC>:! ") -- go to terminal
+keymap.set("n", "ter", "<ESC>:!") -- go to terminal
+
+--强制退出
+keymap.set("n", ":qq", ":q!")
+
+
 

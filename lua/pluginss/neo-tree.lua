@@ -8,20 +8,7 @@ return{
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     
       config = function()
-        require("plugins.neo-tree").setup({
-          sort = {
-            sorter = "case_sensitive",
-          },
-          view = {
-            width = 30,
-          },
-          renderer = {
-            group_empty = true,
-          },
-          filters = {
-            dotfiles = true,
-          },
-        })
+        require("plugins.neo-tree").setup()
       end,
 
       
