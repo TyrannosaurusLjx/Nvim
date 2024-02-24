@@ -1,44 +1,44 @@
--- 自动补全  
-return {  
-  {  
-    "hrsh7th/nvim-cmp",  
-    event = "InsertEnter",  
-    dependencies = {  
-      "hrsh7th/cmp-nvim-lsp",  
-      "hrsh7th/cmp-buffer",  
-      "hrsh7th/cmp-path",  
-      "onsails/lspkind-nvim",  
-      "hrsh7th/cmp-nvim-lua",  
-      "octaltree/cmp-look",  
-      "hrsh7th/cmp-calc",  
-      "f3fora/cmp-spell",  
-      "hrsh7th/cmp-emoji",  
-    },  
-    config = function()  
-      local lspkind = require('lspkind')  
-      local cmp = require("cmp")  
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })  
-      local defaults = require("cmp.config.default")()  
-      cmp.setup({  
-        completion = {  
-          completeopt = "menu,menuone,noinsert",  
-        },  
-        mapping = cmp.mapping.preset.insert({  
-          ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),  
-          -- other mappings...  
-        }),  
-        sources = {  
-          { name = "nvim_lsp" },  
-          { name = "path" },  
-          { name = "buffer" },  
-          { name = "emoji" },  
-          { name = "nvim_lua" },  
-        },  
-        snippet = {  
-          expand = function(args)  
-            require('luasnip').lsp_expand(args.body)  
-          end,  
-        },  
+-- 自动补全
+return {
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "onsails/lspkind-nvim",
+      "hrsh7th/cmp-nvim-lua",
+      "octaltree/cmp-look",
+      "hrsh7th/cmp-calc",
+      "f3fora/cmp-spell",
+      "hrsh7th/cmp-emoji",
+    },
+    config = function()
+      local lspkind = require('lspkind')
+      local cmp = require("cmp")
+      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+      local defaults = require("cmp.config.default")()
+      cmp.setup({
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+          -- other mappings...
+        }),
+        sources = {
+          { name = "nvim_lsp" },
+          { name = "path" },
+          { name = "buffer" },
+          { name = "emoji" },
+          { name = "nvim_lua" },
+        },
+        snippet = {
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+          end,
+        },
         -- 快捷键绑定
   mapping = {
     -- 上一个
@@ -64,25 +64,25 @@ return {
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
   },
 
-        formatting = {  
-          format = lspkind.cmp_format({  
-            with_text = true, --显示 function 等字样  
-            maxwidth = 50,  
-            before = function(entry, vim_item)  
-              vim_item.menu =  ""  -- 不显示来源 -- "[" .. string.upper(entry.source.name) .. "]"  
-              return vim_item  
-            end  
-          })  
-        },  
-        experimental = {  
-          ghost_text = {  
-            hl_group = "CmpGhostText",  
-          },  
-        },  
-        sorting = defaults.sorting,  
-      })  
-    end,  
+        formatting = {
+          format = lspkind.cmp_format({
+            with_text = true, --显示 function 等字样
+            maxwidth = 50,
+            before = function(entry, vim_item)
+              vim_item.menu =  ""  -- 不显示来源 -- "[" .. string.upper(entry.source.name) .. "]"
+              return vim_item
+            end
+          })
+        },
+        experimental = {
+          ghost_text = {
+            hl_group = "CmpGhostText",
+          },
+        },
+        sorting = defaults.sorting,
+      })
+    end,
   },
   -- load vscode snippet (friendly-snippet)
 require("luasnip.loaders.from_vscode").lazy_load()
-}  
+}

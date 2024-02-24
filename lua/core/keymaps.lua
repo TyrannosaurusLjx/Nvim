@@ -24,10 +24,11 @@ keymap.set("n","tree","<ESC>:Neotree<CR>")
 
 --telescope 映射
 --local builtin = require('telescope.builtin')
-keymap.set("n", "ff", "<ESC>:Telescope find_files<CR> ")
-keymap.set('n', 'fw', "<ESC>:Telescope live_grep <CR> ")
-keymap.set('n', 'fb', "<ESC>:Telescope buffers<CR> ")
-keymap.set('n', 'fh', "<ESC>:Telescope help_tags<CR> ")
+keymap.set("n", "fl", "<ESC>:Telescope find_files<CR>")--find lua
+keymap.set('n', 'fw', "<ESC>:Telescope live_grep <CR>")
+keymap.set('n', 'fb', "<ESC>:Telescope buffers<CR>")
+keymap.set('n', 'fh', "<ESC>:Telescope help_tags<CR>")
+keymap.set('n', 'ff', "<ESC>:Telescope oldfiles<CR>")
 
 --运行终端命令快捷键
 keymap.set("n", "ter", "<ESC>:!") -- go to terminal
