@@ -37,4 +37,8 @@ keymap.set("n", "ter", "<ESC>:!") -- go to terminal
 keymap.set("n", ":qq", ":q!")
 
 
+--markdown imp
+keymap.set("n", "pp", "<ESC>:call mdip#MarkdownClipboardImage()<CR>")
 
+--markdown preview
+keymap.set("n", "<F8>", "<ESC>:MarkdownPreview<CR>")

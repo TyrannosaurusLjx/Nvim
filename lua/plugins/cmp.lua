@@ -46,7 +46,7 @@ return {
     -- 下一个
     ['<C-j>'] = cmp.mapping.select_next_item(),
     -- 出现补全
-    ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- 取消
     ['<A-,>'] = cmp.mapping({
       i = cmp.mapping.abort(),
