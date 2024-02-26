@@ -15,3 +15,7 @@ fh tag-help搜索（）
 gg 第一行 G 最后一行
 
 zz 居中显示 
+
+"\<f8\>"实时显示markdown
+
+pp 在 markdown 中粘贴图片 
