@@ -46,12 +46,12 @@ return {
     -- 下一个
     ['<C-j>'] = cmp.mapping.select_next_item(),
     -- 出现补全
-    ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-.>'] = cmp.mapping.complete(),
     -- 取消
-    ['<A-,>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
+--    ['<A-,>'] = cmp.mapping({
+--      i = cmp.mapping.abort(),
+--      c = cmp.mapping.close(),
+--    })
     -- 确认
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.

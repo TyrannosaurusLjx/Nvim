@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-
+vim.cmd('autocmd VimLeave * :SessionSave')
 
 require("core.options")
 require("core.keymaps")
@@ -24,4 +24,5 @@ require("lazy").setup({{import = "plugins"}})
 --require'lspconfig'.cpplint.setup{}
 --require'lspconfig'.markdownlint.setup{}
 --require'lspconfig'.alex.setup{}
---
+
+

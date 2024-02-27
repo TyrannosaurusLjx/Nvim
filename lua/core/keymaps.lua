@@ -38,7 +38,13 @@ keymap.set("n", ":qq", ":q!")
 
 
 --markdown imp
-keymap.set("n", "pp", "<ESC>:call mdip#MarkdownClipboardImage()<CR>")
+keymap.set("n", "mp", "<ESC>:call mdip#MarkdownClipboardImage()<CR>")
 
 --markdown preview
 keymap.set("n", "<F8>", "<ESC>:MarkdownPreview<CR>")
+
+--make viewpoint center
+keymap.set("i", "<F9>", "<ESC>zz<CR>gi")
+
+--auto-session
+keymap.set("n", "<F10>", "<ESC>:SessionRestore<CR>")
