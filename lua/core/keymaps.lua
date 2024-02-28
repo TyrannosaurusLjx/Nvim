@@ -50,4 +50,8 @@ keymap.set("i", "<F9>", "<ESC>zz<CR>gi")
 keymap.set("n", "<F10>", "<ESC>:SessionRestore<CR>")
 
 --ToggleTrem
-keymap.set("n", "`", "<ESC>:ToggleTerm<CR>")
+keymap.set("n", "`", "<ESC>:execute 'ToggleTerm name='.expand('%')<CR>")
+--下面的只显示文件名而不是完整路径 
+--keymap.set("n", "`", "<ESC>:execute 'ToggleTerm name='.expand('%:t')<CR>")
+--按`退出终端 
+keymap.set("t", "`","exit<CR>")
