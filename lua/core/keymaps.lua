@@ -55,3 +55,13 @@ keymap.set("n", "`", "<ESC>:execute 'ToggleTerm name='.expand('%')<CR>")
 --keymap.set("n", "`", "<ESC>:execute 'ToggleTerm name='.expand('%:t')<CR>")
 --按`退出终端 
 keymap.set("t", "`","exit<CR>")
+
+
+--cpp 快速编译运行
+keymap.set("n","<F12>",":!g++ -o test -std=c++11 '%' && ./test <CR>")
+
+-- glance快捷键,浏览函数定义
+keymap.set('n', 'gd', '<CMD>Glance definitions<CR>')
+--keymap.set('n', 'gR', '<CMD>Glance references<CR>')
+--keymap.set('n', 'gY', '<CMD>Glance type_definitions<CR>')
+--keymap.set('n', 'gM', '<CMD>Glance implementations<CR>')
