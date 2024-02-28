@@ -19,3 +19,7 @@ zz 居中显示
 "\<f8\>"实时显示markdown
 
 pp 在 markdown 中粘贴图片 
+
+视觉模式下选中段落，以格式:s/old_char/new_char 可以更改old_char为 new_char
+
+

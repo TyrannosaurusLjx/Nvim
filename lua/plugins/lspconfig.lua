@@ -17,6 +17,7 @@ return {
             lspconfig.clangd.setup({
                 cmd = {"/usr/bin/clangd", "--background-index"}
             })
+            lspconfig.marksman.setup({})
         end,
     }
 }

@@ -32,6 +32,5 @@ opt.smartcase = true
 
 vim.api.nvim_set_option("undofile",true)
 
-
-
-
+--光标为竖线 
+--vim.o.guicursor = "a:ver25"
