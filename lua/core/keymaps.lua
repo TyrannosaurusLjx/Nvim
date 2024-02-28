@@ -48,3 +48,6 @@ keymap.set("i", "<F9>", "<ESC>zz<CR>gi")
 
 --auto-session
 keymap.set("n", "<F10>", "<ESC>:SessionRestore<CR>")
+
+--ToggleTrem
+keymap.set("n", "`", "<ESC>:ToggleTerm<CR>")
