@@ -8,12 +8,12 @@ return{
 --              -- By default glance will open preview "embedded" within your active window
 --              -- when `detached` is enabled, glance will render above all existing windows
 --              -- and won't be restiricted by the width of your active window
---              detached = true,
+--              --detached = true,
 --              -- Or use a function to enable `detached` only when the active window is too small
 --              -- (default behavior)
 --              preview_win_opts = { -- Configure preview window options
 --                cursorline = true,
---                number = false,
+--                number = true,
 --                wrap = true,
 --              },
 --              border = {
