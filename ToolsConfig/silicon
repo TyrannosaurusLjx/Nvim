@@ -1,0 +1,10 @@
+these should be removed{
+position : ~/.config/silicon/config
+}
+
+config details:
+
+--shadow-blur-radius 5
+--pad-horiz 45
+--pad-vert 35
+

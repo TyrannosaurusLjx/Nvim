@@ -23,3 +23,7 @@
 }
 ```
  实际上这应该不是 mini solution 但是不管了 
+
+安装 brew install silicon:https://github.com/Aloxaf/silicon实现代码转图片
+
+ 

@@ -70,3 +70,6 @@ keymap.set('n', 'gd', '<CMD>Glance definitions<CR>')
 
 --设置帮助文档
 keymap.set("n",":ljx<CR>",":split ~/.config/nvim/short_intro.md<CR>")
+
+--利用silicon 复制代码图片
+keymap.set("v","<F12>","y<ESC>:!silicon --from-clipboard -l rs --to-clipboard<CR><CR>")
