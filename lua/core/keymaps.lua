@@ -18,7 +18,7 @@ keymap.set("n","88","<ESC>:BufferLineCyclePrev<CR>")
 keymap.set("n","99","<ESC>:BufferLineCycleNext<CR>")
 
 -- tree映射
-keymap.set("n","open","<ESC>:Ntree<CR>")
+--keymap.set("n","open","<ESC>:Ntree<CR>")
 keymap.set("n","tree","<ESC>:Neotree<CR>")
 
 
@@ -65,3 +65,8 @@ keymap.set('n', 'gd', '<CMD>Glance definitions<CR>')
 --keymap.set('n', 'gR', '<CMD>Glance references<CR>')
 --keymap.set('n', 'gY', '<CMD>Glance type_definitions<CR>')
 --keymap.set('n', 'gM', '<CMD>Glance implementations<CR>')
+--
+--
+
+--设置帮助文档
+keymap.set("n",":ljx<CR>",":split ~/.config/nvim/short_intro.md<CR>")
