@@ -20,7 +20,7 @@ return{
     logo = string.rep("\n", 8) .. logo .. "\n\n"
 
     local opts = {
-      theme = "doom",
+      theme = "doom",--or hyper
       hide = {
         -- this is taken care of by lualine
         -- enabling this messes up the actual laststatus setting after loading a file
@@ -34,6 +34,7 @@ return{
           { action = "ene | startinsert",                                        desc = " New file",        icon = " ", key = "n" },
           { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "r" },
           -- { action = "Telescope live_grep",                                      desc = " Find text",       icon = " ", key = "g" },
+                --打开报错
           -- { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " Config",          icon = " ", key = "c" },
           -- { action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = " ", key = "s" },
           -- { action = "LazyExtras",                                               desc = " Lazy Extras",     icon = " ", key = "x" },
