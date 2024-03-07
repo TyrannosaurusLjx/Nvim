@@ -24,5 +24,3 @@ require("lazy").setup({{import = "plugins"}})
 --require'lspconfig'.cpplint.setup{}
 --require'lspconfig'.markdownlint.setup{}
 --require'lspconfig'.alex.setup{}
-
-

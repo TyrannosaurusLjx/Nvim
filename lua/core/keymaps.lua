@@ -38,7 +38,11 @@ keymap.set("n", ":qq", ":q!")
 
 
 --markdown imp
-keymap.set("n", "mp", "<ESC>:call mdip#MarkdownClipboardImage()<CR>")
+--norm 粘贴
+keymap.set("n", "<c-p>","<ESC>:call mdip#MarkdownClipboardImage()<CR><ESC>")--最后的 ESC  是为了取消选择模式
+--insert 粘贴
+keymap.set("i", "<c-p>","<ESC>:call mdip#MarkdownClipboardImage()<CR><ESC>")
+
 
 --markdown preview
 keymap.set("n", "<F8>", "<ESC>:MarkdownPreview<CR>")
@@ -73,3 +77,13 @@ keymap.set("n",":ljx<CR>",":split ~/.config/nvim/short_intro.md<CR>")
 
 --利用silicon 复制代码图片
 keymap.set("v","<F12>","y<ESC>:!silicon --from-clipboard -l rs --to-clipboard<CR><CR>")
+
+
+
+-- 在 Lua 配置文件中配置 Copilot 建议的快捷键  
+--keymap.set('i', '<C-n>', '<cmd>lua require("copilot.suggestion").next()<CR>', { noremap = true, silent = true })  
+--keymap.set('i', '<C-p>', '<cmd>lua require("copilot.suggestion").prev()<CR>', { noremap = true, silent = true })
+keymap.set('i', '<F12>', '<cmd>lua require("copilot.suggestion").accept()<CR>', { noremap = true, silent = true })
+keymap.set('n', ':copilot<CR>', '<ESC>:lua require("copilot.suggestion").toggle_auto_trigger()<CR>', { noremap = true, silent = false })
+
+
