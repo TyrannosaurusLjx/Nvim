@@ -25,3 +25,6 @@ zz 居中显示
 按\cc注释,\cu取消注释
 
 [m跳转到方法开始,V 进入 visual 模式,% 选中整个方法  
+
+
+[<f12>在 insert 下是接受 cpilot 建议,在 normal 下是c++文件的快速编译运行,在 visual 模式下是复制生成代码图到剪切板](./lua/core/keymaps.lua#L87)
