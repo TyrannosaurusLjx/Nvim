@@ -9,9 +9,9 @@ return{
             float_opts = {
                 border = 'curved',
                 width = 80,
-                height = 15,
+                height = 20,
                 row = 7,
-                col = 45,
+                col = 30,
                 winblend = 0,
                 --zindex = <value>,
                 title_pos = 'center',
