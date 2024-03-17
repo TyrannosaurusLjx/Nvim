@@ -28,3 +28,5 @@ zz 居中显示
 
 
 [<f12>在 insert 下是接受 cpilot 建议,在 normal 下是c++文件的快速编译运行,在 visual 模式下是复制生成代码图到剪切板](./lua/core/keymaps.lua#L87)
+
+normal 下 z + <CR> 可以把这一行放到屏幕最顶上 
