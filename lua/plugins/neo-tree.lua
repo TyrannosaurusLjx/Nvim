@@ -12,9 +12,9 @@ return{
           sort = {
             sorter = "case_sensitive",
           },
-          view = {
-            width = 30,
-          },
+          --view = {
+            --width = '30%',
+          --},
           renderer = {
             group_empty = true,
           },

@@ -5,17 +5,21 @@ return{
         require("bufferline").setup({
             options = {
               mode = 'buffers',
-            
                     --myconfig
               numbers="ordinal",
               themable=true,
 
 
+                offsets = {{
+                    filetype = "neo-tree",
+                    text = "File Explorer",
+                    highlight = "Directory",
+                    text_align = "left",
+                    separator = true
+                }},
 
-              offsets = {
-              {filetype = 'NvimTree'}
-              },
             },
+
             highlights = {
               buffer_selected = {
                 italic = false
