@@ -36,28 +36,37 @@ return {
           { name = "emoji" },
           { name = "nvim_lua" },
         },
+                ---
+          -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+        cmp.setup.cmdline({ '/', '?' }, {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = {
+            { name = 'buffer' }
+          }
+       }),
+                ---
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
           end,
         },
         -- 快捷键绑定
-  mapping = {
-    -- 上一个
-    ['<C-k>'] = cmp.mapping.select_prev_item(),
-    -- 下一个
-    ['<C-j>'] = cmp.mapping.select_next_item(),
-    -- 出现补全
-    ['<C-.>'] = cmp.mapping.complete(),
-    -- 取消
---    ['<A-,>'] = cmp.mapping({
---      i = cmp.mapping.abort(),
---      c = cmp.mapping.close(),
---    })
+      mapping = {
+        -- 上一个
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        -- 下一个
+        ['<tab>'] = cmp.mapping.select_next_item(),
+        -- 出现补全
+        ['<C-.>'] = cmp.mapping.complete(),
+       -- 取消
+    --    ['<A-,>'] = cmp.mapping({
+    --      i = cmp.mapping.abort(),
+    --      c = cmp.mapping.close(),
+    --    })
     -- 确认
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ['<tab>'] = cmp.mapping.confirm({
+    ['<CR>'] = cmp.mapping.confirm({
       select = true,
       behavior = cmp.ConfirmBehavior.Replace
     }),
@@ -71,7 +80,7 @@ return {
             with_text = true, --显示 function 等字样
             maxwidth = 50,
             before = function(entry, vim_item)
-              vim_item.menu =  ""  -- 不显示来源 -- "[" .. string.upper(entry.source.name) .. "]"
+              vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"  -- 不显示来源 -- "[" .. string.upper(entry.source.name) .. "]"
               return vim_item
             end
           })

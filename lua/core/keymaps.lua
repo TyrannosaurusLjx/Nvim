@@ -2,7 +2,7 @@ local keymap = vim.keymap
 
 
 -- insert mode
-keymap.set("i","qq","<ESC>")
+keymap.set("i","jk","<ESC>")
 
 -- 正常模式
 keymap.set("n","//",":nohlsearch<CR>")  -- 使用 // 取消搜索
@@ -14,12 +14,12 @@ keymap.set("v","K",":m '<-2<CR>gv=gv")
 -- bufferline 快捷键
 --88上一个，99 下一个 00 关闭 
 keymap.set("n","00","<ESC>:bd<CR>")
-keymap.set("n","88","<ESC>:BufferLineCyclePrev<CR>")
-keymap.set("n","99","<ESC>:BufferLineCycleNext<CR>")
+keymap.set("n","8","<ESC>:BufferLineCyclePrev<CR>")
+keymap.set("n","9","<ESC>:BufferLineCycleNext<CR>")
 
 -- tree映射
 --keymap.set("n","open","<ESC>:Ntree<CR>")
-keymap.set("n","tree","<ESC>:Neotree<CR>")
+keymap.set("n","t","<ESC>:Neotree<CR>")
 
 
 --telescope 映射
@@ -87,3 +87,10 @@ keymap.set('i', '<F12>', '<cmd>lua require("copilot.suggestion").accept()<CR>', 
 keymap.set('n', ':copilot<CR>', '<ESC>:lua require("copilot.suggestion").toggle_auto_trigger()<CR>', { noremap = true, silent = false })
 
 
+--j,k 居中
+--keymap.set('n','j','jzz')
+keymap.set('n','k','kzz')
+
+-- 设置 insert 模式下左右移动
+keymap.set('i',"<C-h>",'<ESC>hi')
+keymap.set('i',"<C-l>",'<ESC>la')

@@ -26,4 +26,4 @@
 
 安装 brew install silicon:https://github.com/Aloxaf/silicon实现代码转图片
 
- 
+[vim主题预览](https://vimcolorschemes.com/) 
