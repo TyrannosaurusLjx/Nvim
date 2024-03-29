@@ -1,0 +1,72 @@
+{
+    "Sum":{
+        "prefix":"sum",
+        "body":[
+            "\\sum\\limits_{${1:i=0}}^{${2:n}} ${3}"
+        ],
+        "description":"sum snippets"
+    },
+    "Integral":{
+        "prefix":"int",
+        "body":[
+            "\\int\\limits_{${1:i=0}}^{${2:n}} ${3}"
+        ],
+        "description":"integral snippets"
+    },
+    "Fraction":{
+        "prefix":"frac",
+        "body":[
+            "\\frac{${1:numerator}}{${2:denominator}}"
+        ],
+        "description":"fraction snippets"
+    },
+    "Square Root":{
+        "prefix":"sqrt",
+        "body":[
+            "\\sqrt{${1:x}}"
+        ],
+        "description":"square root snippets"
+    },
+    "Limits":{
+        "prefix":"lim",
+        "body":[
+            "\\lim\\limits_{${1:x\\to\\infty}} ${2:f(x)}"
+        ],
+        "description":"limits snippets"
+    },
+    "Overline":{
+        "prefix":"overline",
+        "body":[
+            "\\overline{${1:closed}}{${2:\\subset }}"
+        ],
+        "description":"overline snippets"
+    },
+    "Underline":{
+        "prefix":"underline",
+        "body":[
+            "\\underline{${1:d}{${2:\\subset}"
+        ],
+        "description":"underline snippets"
+    },
+    "Right Arrow":{
+        "prefix":"rightarrow",
+        "body":[
+            "\\rightarrow"
+        ],
+        "description":"right arrow snippets"
+    },
+    "Left Arrow":{
+        "prefix":"leftarrow",
+        "body":[
+            "\\leftarrow"
+        ],
+        "description":"left arrow snippets"
+    },
+    "Text":{
+        "prefix":"\\",
+        "body":[
+            "\\text{${1:}}"
+        ],
+        "description":"text snippets"
+    }
+}

@@ -94,3 +94,14 @@ keymap.set('n','k','kzz')
 -- 设置 insert 模式下左右移动
 keymap.set('i',"<C-h>",'<ESC>hi')
 keymap.set('i',"<C-l>",'<ESC>la')
+
+
+
+
+
+ --local mappings = require('snippy.mapping')
+ --
+ --keymap.set('s', '<Tab>', mappings.next('<Tab>'))
+ --keymap.set('i', 's', '<S-Tab>', mappings.previous('<S-Tab>'))
+ --keymap.set('x', '<Tab>', mappings.cut_text, { remap = true })
+ --keymap.set('n', 'g<Tab>', mappings.cut_text, { remap = true })
