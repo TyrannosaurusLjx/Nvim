@@ -1,6 +1,4 @@
 -- 自动补全
-
-
 ---
 
 return {
@@ -38,6 +36,31 @@ return {
       local cmp = require("cmp")
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local defaults = require("cmp.config.default")()
+
+
+      local border_chars = {
+        "┌", "─", "┐",
+        "│",       "│",
+        "└", "─", "┘",
+    }
+    
+    local function draw_border(win_id, width, height)
+        local lines = {}
+        for i = 1, height do
+            local line = border_chars[(i - 1) % 3 + 1]
+            if i == 1 or i == height then
+                line = border_chars[2]
+            end
+            table.insert(lines, line)
+        end
+        vim.api.nvim_buf_set_lines(win_id, 0, -1, false, lines)
+    end
+    
+    local cmp = require("cmp")
+
+    
+
+
       cmp.setup({
         completion = {
           completeopt = "menu,menuone,noinsert",
@@ -48,13 +71,13 @@ return {
         }),
         sources = {
           -- Copilot Source
-          { name = "copilot", group_index = 2 },
+          { name = 'luasnip' },
+          -- { name = "copilot", group_index = 2 },
           { name = "nvim_lsp" },
           { name = "path" },
           { name = "buffer" },
           { name = "emoji" },
           { name = "nvim_lua" },
-          { name = 'luasnip' },
           --{ name = "snippy" },
         },
                 ---
@@ -87,15 +110,15 @@ return {
         --    })
         -- 确认
                     -- LuaSnip
-        ["<Space>"] = cmp.mapping(function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
           --if cmp.visible() then
           --  cmp.select_next_item()
-          -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
-          -- that way you will only jump inside the snippet region
+            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+            -- they way you will only jump inside the snippet region
           if luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
-          elseif has_words_before() then
-            cmp.complete()
+          --elseif has_words_before() then
+            --cmp.complete()
           else
             fallback()
           end
@@ -116,7 +139,7 @@ return {
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
         -- tab 被拓展成luasnip 的键,这里用回车键接受
-        ['<Tab>'] = cmp.mapping.confirm({
+        ['<CR>'] = cmp.mapping.confirm({
           select = true,
           behavior = cmp.ConfirmBehavior.Replace
         }),
@@ -141,6 +164,11 @@ return {
             hl_group = "CmpGhostText",
           },
         },
+
+        view = {
+          entries = {name = 'custom', selection_order = 'near_cursor' } 
+        },
+
         sorting = defaults.sorting,
       })
     end,

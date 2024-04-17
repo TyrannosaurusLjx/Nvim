@@ -83,9 +83,9 @@ keymap.set("v","<F12>","y<ESC>:!silicon --from-clipboard -l rs --to-clipboard<CR
 -- 在 Lua 配置文件中配置 Copilot 建议的快捷键  
 --keymap.set('i', '<C-n>', '<cmd>lua require("copilot.suggestion").next()<CR>', { noremap = true, silent = true })  
 --keymap.set('i', '<C-p>', '<cmd>lua require("copilot.suggestion").prev()<CR>', { noremap = true, silent = true })
-keymap.set('i', '<F12>', '<cmd>lua require("copilot.suggestion").accept()<CR>', { noremap = true, silent = true })
+keymap.set('i', '<leader><F12>', '<cmd>lua require("copilot.suggestion").accept_word()<CR>', { noremap = true, silent = true })
+keymap.set('i',"<F12>",'<cmd>lua require("copilot.suggestion").accept_line()<CR>')
 keymap.set('n', ':copilot<CR>', '<ESC>:lua require("copilot.suggestion").toggle_auto_trigger()<CR>', { noremap = true, silent = false })
-
 
 --j,k 居中
 --keymap.set('n','j','jzz')
@@ -96,12 +96,3 @@ keymap.set('i',"<C-h>",'<ESC>hi')
 keymap.set('i',"<C-l>",'<ESC>la')
 
 
-
-
-
- --local mappings = require('snippy.mapping')
- --
- --keymap.set('s', '<Tab>', mappings.next('<Tab>'))
- --keymap.set('i', 's', '<S-Tab>', mappings.previous('<S-Tab>'))
- --keymap.set('x', '<Tab>', mappings.cut_text, { remap = true })
- --keymap.set('n', 'g<Tab>', mappings.cut_text, { remap = true })

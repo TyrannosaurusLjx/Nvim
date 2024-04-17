@@ -1,27 +1,18 @@
-{
-    "Sum":{
-        "prefix":"sum",
-        "body":[
-            "\\sum\\limits_{${1:i=0}}^{${2:n}} ${3}"
-        ],
-        "description":"sum snippets"
-    },
-    "Integral":{
-        "prefix":"int",
+{ "Sum":{ "prefix":"sum", "body":[ "\\sum\\limits_{${1:i=0}}^{${2:n}} ${3}" ], "description":"sum snippets" }, "Integral":{ "prefix":"int",
         "body":[
             "\\int\\limits_{${1:i=0}}^{${2:n}} ${3}"
         ],
         "description":"integral snippets"
     },
     "Fraction":{
-        "prefix":"frac",
+        "prefix":"fr",
         "body":[
             "\\frac{${1:numerator}}{${2:denominator}}"
         ],
         "description":"fraction snippets"
     },
     "Square Root":{
-        "prefix":"sqrt",
+        "prefix":"sq",
         "body":[
             "\\sqrt{${1:x}}"
         ],
@@ -49,14 +40,14 @@
         "description":"underline snippets"
     },
     "Right Arrow":{
-        "prefix":"rightarrow",
+        "prefix":"ra",
         "body":[
             "\\rightarrow"
         ],
         "description":"right arrow snippets"
     },
     "Left Arrow":{
-        "prefix":"leftarrow",
+        "prefix":"la",
         "body":[
             "\\leftarrow"
         ],
@@ -68,5 +59,90 @@
             "\\text{${1:}}"
         ],
         "description":"text snippets"
+    },
+    "Math":{
+        "prefix":"$",
+        "body":["$$1$"],
+        "description":"input math"
+    },
+    "fx":{
+        "prefix":"f",
+        "body":"f(${1:x})",
+        "description":"f(x)"
+    },
+    "gx":{
+        "prefix":"g",
+        "body":"g(${1:x})",
+        "description":"g(x)"
+    },
+    "delta":{
+        "prefix":"delta",
+        "body":"\\delta $1",
+        "description":"delta"
+    },
+    "Delta":{
+        "prefix":"Delta",
+        "body":"\\Delta $1",
+        "description":"Delta"
+    },
+    "epsilon":{
+        "prefix":"epsilon",
+        "body":"\\epsilon $1",
+        "description":"epsilon"
+    },
+    "Epsilon":{
+        "prefix":"Epsilon",
+        "body":"\\Epsilon $1",
+        "description":"Epsilon"
+    },
+    "theta":{
+        "prefix":"theta",
+        "body":"\\theta $1",
+        "description":"theta"
+    },
+    "Theta":{
+        "prefix":"Theta",
+        "body":"\\Theta $1",
+        "description":"Theta"
+    },
+    "lambda":{
+        "prefix":"lambda",
+        "body":"\\lambda $1",
+        "description":"lambda"
+    },
+    "Lambda":{
+        "prefix":"Lambda",
+        "body":"\\Lambda $1",
+        "description":"Lambda"
+    },
+    "mu":{
+        "prefix":"mu",
+        "body":"\\mu $1",
+        "description":"mu"
+    },
+    "Mu":{
+        "prefix":"Mu",
+        "body":"\\Mu $1",
+        "description":"Mu"
+    },
+    "sigma":{
+        "prefix":"sigma",
+        "body":"\\sigma $1",
+        "description":"sigma"
+    },
+    "Sigma":{
+        "prefix":"Sigma",
+        "body":"\\Sigma $1",
+        "description":"Sigma"
+    },
+    "define":{
+        "prefix":"dingyi",
+        "body":"#### 定义 $1",
+        "description":"定义"
+    },
+    "theorem":{
+        "prefix":"dingli",
+        "body":"#### 定理 $1",
+        "description":"定理"
     }
 }
